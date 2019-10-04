@@ -19,9 +19,9 @@
     "test:coverage": "ng test ngx-rut --code-coverage --watch=false",
     "report": "cat ./coverage/ngx-rut/lcov.info | codecov",
     "semantic-release": "semantic-release",
-    "adjust-version": "npm-run-all adjust-version:*",    
-    "adjust-version:lib": "rjp projects/ngx-rut/package.json version $VERSION",    
-    "adjust-version:main": "rjp package.json version $VERSION"
+    "version": "npm run version:main && npm run version:lib",    
+    "version:lib": "npm run rjp projects/ngx-rut/package.json version $VERSION",    
+    "version:main": "npm run rjp package.json version $VERSION"
   },
   "author": "Nicolás Leporati <nico.leporati@gmail.cl>",
   "contributors": [],
