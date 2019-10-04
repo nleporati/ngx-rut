@@ -142,9 +142,9 @@ __webpack_require__.r(__webpack_exports__);
 var RutPipe = /** @class */ (function () {
     function RutPipe() {
     }
-    RutPipe.prototype.transform = function (value, clean) {
-        if (clean === void 0) { clean = false; }
-        if (clean) {
+    RutPipe.prototype.transform = function (value, format) {
+        if (format === void 0) { format = true; }
+        if (!format) {
             return Object(rut_helpers__WEBPACK_IMPORTED_MODULE_2__["rutClean"])(value);
         }
         return Object(rut_helpers__WEBPACK_IMPORTED_MODULE_2__["rutFormat"])(value);
