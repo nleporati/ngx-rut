@@ -1,9 +1,24 @@
 {
   "name": "ngx-rut",
-  "version": "0.0.1",
+  "description": "Chilean RUT for Angular",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0",
     "rut-helpers": "^0.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nleporati/ngx-rut"
+  },
+  "bugs": {
+    "url": "https://github.com/nleporati/ngx-rut/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "rut",
+    "angular7",
+    "chile"
+  ]
 }

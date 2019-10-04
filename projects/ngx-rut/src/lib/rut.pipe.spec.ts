@@ -13,6 +13,6 @@ describe("RutPipe", () => {
 
   it("clean RUT to string", () => {
     const pipe = new RutPipe();
-    expect(pipe.transform("7.618.285.K", true)).toBe("7618285K");
+    expect(pipe.transform("7.618.285.K", false)).toBe("7618285K");
   });
 });

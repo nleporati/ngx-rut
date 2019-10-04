@@ -1,23 +1,24 @@
 {
   "name": "ngx-rut-demo",
-  "description": "RUT for Angular",
-  "version": "7.0.0",
+  "description": "Chilean RUT for Angular",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "npm run build:lib && npm run build:demo",
     "build:demo": "ng build",
-    "build:lib": "npm run copy:readme && ng build ngx-rut",
-    "build:showcase": "ng build ngx-rut --base-href='https://github.com/nleporati/ngx-rut'",
+    "build:lib": "ng build ngx-rut && npm run copy:readme",
+    "build:showcase": "ng build ngx-rut-demo --base-href='https://github.com/nleporati/ngx-rut'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/ngx-rut-demo",
-    "copy:readme": "copyfiles ./README.md ./dist/ngx-rut",
+    "copy:readme": "copyfiles .\/README.md .\/dist\/ngx-rut",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:check": "prettier --check \"{projects,src/app}/**/*.ts\"",
     "format:write": "prettier --write \"{projects,src/app}/**/*.ts\"",
     "test:coverage": "ng test ngx-rut --code-coverage --watch=false",
-    "report": "cat ./coverage/ng-alert/lcov.info | codecov"
+    "report": "cat ./coverage/ngx-rut/lcov.info | codecov",
+    "semantic-release": "semantic-release"
   },
   "author": "Nicolás Leporati <nico.leporati@gmail.cl>",
   "contributors": [],
@@ -82,7 +83,8 @@
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "semantic-release": "^15.13.24"
   },
   "husky": {
     "hooks": {

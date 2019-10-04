@@ -1,7 +1,9 @@
 Angular 7 RUT
 =============
 
-Angular 7 library with several components to handle [Chilean RUT](https://en.wikipedia.org/wiki/National_identification_number#Chile) validation, cleaning and formatting.
+Updated for Angular 7 with a cleaner project structure. It does not test yet in other Angular versions.
+
+Angular library with several components to handle [Chilean RUT](https://en.wikipedia.org/wiki/National_identification_number#Chile) validation, cleaning and formatting.
 
 ## Installation
 
@@ -39,7 +41,7 @@ Run dev server in base project for a fully working example.
 ngx-rut exposes multiple features that can be used to perform input validation and formatting. Probably you want to use one of the following:
 
 - `RutValidatorDirective`: Exposes the `rutValidate` directive (to attach to models or inputs) and the RutValidator class to be used as `Validator` on reactive forms.
-- `RutPipe`: Exposes the `RutPipe` pipe to format rut numbers on templates
+- `RutPipe`: Exposes the `RutPipe` pipe to format or clean rut numbers on templates.
 - `RutDirective`: Exposes the `rutFormat` directive to format RUT inputs.
 
 #### RutValidator
@@ -71,6 +73,8 @@ export class DemoAppComponent {
 <!-- 30972198 -->
 {{ user.rut | rut }}
 <!-- 3.097.219-8 -->
+{{ '3.097.219-8' | rut:false }}
+<!-- 30972198 -->
 ```
 
 #### formatRut (Directive)
@@ -95,8 +99,7 @@ export class DemoAppComponent {
 
 ## Credits
 
-Based on platanus library Ng2Rut
-Thank you [contributors](https://github.com/platanus/ng2-rut/graphs/contributors)!
+Based on [platanus ng2-rut](https://github.com/platanus/ng2-rut) library
 
 ## License
 

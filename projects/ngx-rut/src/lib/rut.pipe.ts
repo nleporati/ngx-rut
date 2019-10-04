@@ -5,8 +5,8 @@ import { rutFormat, rutClean } from "rut-helpers";
   name: "rut"
 })
 export class RutPipe implements PipeTransform {
-  public transform(value: string, clean = false): string {
-    if (clean) {
+  public transform(value: string, format = true): string {
+    if (!format) {
       return rutClean(value);
     }
     return rutFormat(value);
