@@ -73,7 +73,7 @@ export class DemoAppComponent {
 <!-- 3.097.219-8 -->
 ```
 
-#### formatRut (Directive)
+#### rutFormat (Directive)
 ```html
 <input [(ngModel)]="user.rut" name="rut" rutFormat required>
 <!--
