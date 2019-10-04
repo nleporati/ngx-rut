@@ -21,6 +21,7 @@ jobs:
   include:
   - stage: lint
     script:
+    - npm i
     - ng lint
   - stage: test
     script:
