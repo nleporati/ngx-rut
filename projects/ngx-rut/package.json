@@ -1,0 +1,9 @@
+{
+  "name": "ngx-rut",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0",
+    "rut-helpers": "^0.1.0"
+  }
+}

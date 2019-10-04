@@ -1,27 +1,103 @@
-# NgxRutDemo
+Angular 7 RUT
+=============
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+Angular 7 library with several components to handle [Chilean RUT](https://en.wikipedia.org/wiki/National_identification_number#Chile) validation, cleaning and formatting.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+yarn add ngx-rut
+# or
+npm install ngx-rut --save
+```
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Set-up:
 
-## Build
+The easiest way to use this library is to import NgxRut in your app's main module.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```typescript
+import { NgModule } from '@angular/core';
+import { NgxRut } from 'ngx-rut';
+import { BrowserModule } from '@angular/platform-browser';
 
-## Running unit tests
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    NgxRut
+  ],
+})
+class DemoAppModule { }
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run dev server in base project for a fully working example.
 
-## Running end-to-end tests
+### Using it:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+ngx-rut exposes multiple features that can be used to perform input validation and formatting. Probably you want to use one of the following:
 
-## Further help
+- `RutValidatorDirective`: Exposes the `rutValidate` directive (to attach to models or inputs) and the RutValidator class to be used as `Validator` on reactive forms.
+- `RutPipe`: Exposes the `RutPipe` pipe to format rut numbers on templates
+- `RutDirective`: Exposes the `rutFormat` directive to format RUT inputs.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### RutValidator
+
+##### Reactive forms
+
+```typescript
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { RutValidator } from 'ngx-rut';
+export class DemoAppComponent {
+  constructor (fb: FormBuilder) {
+    this.reactiveForm = fb.group({
+      rut: ['30972198', [Validators.required, RutValidator]]
+    });
+  }
+}
+
+```
+
+##### Template Form
+```html
+<input [(ngModel)]="user.rut" name="rut" rutValidate required>
+```
+
+#### RutPipe
+
+```html
+{{ user.rut }}
+<!-- 30972198 -->
+{{ user.rut | rut }}
+<!-- 3.097.219-8 -->
+```
+
+#### formatRut (Directive)
+```html
+<input [(ngModel)]="user.rut" name="rut" rutFormat required>
+<!--
+(on blur)
+3.097.219-8
+
+(on focus)
+30972198
+-->
+```
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+## Credits
+
+Based on platanus library Ng2Rut
+Thank you [contributors](https://github.com/platanus/ng2-rut/graphs/contributors)!
+
+## License
+
+NgxRut is free software and may be redistributed under the terms specified in the LICENSE file.
