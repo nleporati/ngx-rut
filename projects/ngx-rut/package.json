@@ -1,7 +1,7 @@
 {
   "name": "ngx-rut",
   "description": "Chilean RUT for Angular",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0",
@@ -20,5 +20,11 @@
     "rut",
     "angular7",
     "chile"
-  ]
+  ],
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^15.13.24"
+  }
 }

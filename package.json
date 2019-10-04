@@ -10,7 +10,7 @@
     "build:lib": "ng build ngx-rut && npm run copy:readme",
     "build:showcase": "ng build ngx-rut-demo --base-href='https://github.com/nleporati/ngx-rut'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/ngx-rut-demo",
-    "copy:readme": "copyfiles .\/README.md .\/dist\/ngx-rut",
+    "copy:readme": "copyfiles ./README.md ./dist/ngx-rut",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -59,6 +59,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@commitlint/prompt": "^8.2.0",
+    "@semantic-release/exec": "^3.3.7",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -77,14 +78,14 @@
     "ng-packagr": "^4.2.0",
     "prettier": "^1.18.2",
     "protractor": "~5.4.0",
+    "semantic-release": "^15.13.24",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "~3.1.6",
-    "semantic-release": "^15.13.24"
+    "typescript": "~3.1.6"
   },
   "husky": {
     "hooks": {
